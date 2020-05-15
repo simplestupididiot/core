@@ -288,7 +288,7 @@ class Request implements \ArrayAccess, \Countable, IRequest {
 	 * This method returns null if the header did not exist.
 	 *
 	 * @param string $name
-	 * @return string
+	 * @return string|null
 	 */
 	public function getHeader($name) {
 		$name = \strtoupper(\str_replace(['-'], ['_'], $name));
@@ -388,7 +388,7 @@ class Request implements \ArrayAccess, \Countable, IRequest {
 	protected function getContent() {
 		// If the content can't be parsed into an array then return a stream resource.
 		if ($this->method === 'PUT'
-			&& $this->getHeader('Content-Length') !== 0
+			&& $this->getHeader('Content-Length') !== '0'
 			&& $this->getHeader('Content-Length') !== null
 			&& \strpos($this->getHeader('Content-Type'), 'application/x-www-form-urlencoded') === false
 			&& \strpos($this->getHeader('Content-Type'), 'application/json') === false
