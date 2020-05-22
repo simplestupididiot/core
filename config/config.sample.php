@@ -1540,4 +1540,12 @@ $CONFIG = [
  */
 'dav.enable.async' => false,
 
+/**
+ * The link the admin should use to get a demo key while the grace period is active.
+ * The admin will be directed to that web page if he clicks in the "get a demo key"
+ * link in the grace period popup. It's expected that the web page contains instructions
+ * on how to get a valid demo key to be used in the ownCloud server.
+ */
+'grace_period.demo_key.link' => 'https://owncloud.com/try-enterprise/',
+
 ];
